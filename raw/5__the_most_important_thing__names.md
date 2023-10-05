@@ -261,28 +261,16 @@ Basically, the rule is: the larger the scope, the better documented the code sho
 
 Here is an approximate hierarchy of how well named and documented your code should be:
 
+|situation|how well documented|
+|---|---|
+|<ul><li>public function/class/method of a public library</li></ul>|**Great stand-alone names, doc-string with examples**|
+|<ul><li>public function/class/method of a private library</li></ul>|**Great stand-alone names, doc-string**|
+|<ul><li>public function/class/method of an application</li></ul>|**Great stand-alone names**|
+|<ul><li>folder/file name</li><li>global variable</li></ul>|**Great names**|
+|<ul><li>Private function/class/method names</li><li>Private variable</li><li>Local variable</li><li>Local variable in a private function</li></ul>|**Good names**|
+|<ul><li>local variable in a very small (<=3 lines) function/lambda/scope</li></ul>|**Single letter variable is ok here**|
 
-##### doc-string with examples, great stand-alone names 
-* public function/class/method of a public library
-* public function/class/method of a private library
 
-##### great stand-alone names 
-* public function/class/ of an application
-
-##### great names
-* folder/file name
-* global variable
-
-##### good names
-* private function/class/method names
-* private variable
-* local variable
-* local variable in a private function
-
-##### single letter variable is ok here
-* local variable in a very small (<=3 lines) function/lambda/scope
-
----
 
 You can see that the more public your code is, the larger the scope in which that name is a valid call, the better and the more self-explanatory your name should be. So, a public global variable name that can be accessed anywhere in your program should carry with it all necessary information to understand it at any scope. So you shouldn't call it: 
 
