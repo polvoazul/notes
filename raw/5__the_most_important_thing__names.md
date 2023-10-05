@@ -261,33 +261,26 @@ Basically, the rule is: the larger the scope, the better documented the code sho
 
 Here is an approximate hierarchy of how well named and documented your code should be:
 
----
 
-||
----
-|public function/class/method of a public library |
-|public function/class/method of a private library | 
-doc-string with examples, great stand-alone names 
-||
----
-|public function/class/ of an application|
-great stand-alone names 
-||
----
-|folder/file name|
-|global variable|
-great names
-||
----
-|private function/class/method names|
-|private variable|
-|local variable|
-|local variable in a private function|
-good names
-||
----
-|local variable in a very small (<=2 lines) function/lambda/scope 
-single letter variable is ok here
+##### doc-string with examples, great stand-alone names 
+* public function/class/method of a public library
+* public function/class/method of a private library
+
+##### great stand-alone names 
+* public function/class/ of an application
+
+##### great names
+* folder/file name
+* global variable
+
+##### good names
+* private function/class/method names
+* private variable
+* local variable
+* local variable in a private function
+
+##### single letter variable is ok here
+* local variable in a very small (<=3 lines) function/lambda/scope
 
 ---
 
