@@ -28,7 +28,7 @@ Notice that alignemnt between two people vary between $K$ and $-K$ where $K = mi
 Lets define a population's stance on an issue as $s(P, \gamma) = \underset{p \in P}{\text{avg}}(s(p, \gamma))$ just the average stance of all people.
 
 Now, what people want to do is to enact a policy related to an issue. For that, say they need enough people to agree with that issue. So, say, an issue's $\gamma$ policy is enacted if for an _enactment threshold_ $\kappa_{enact}$, the population's stance is larger than that.
-(Lets suppose $\kappa$ is constant for all issues. <sup>[Hypothesis1]</sup>)
+(Lets suppose $\kappa$ is constant for all issues. <sup>[^hypothesis-1]</sup>)
 
 
 $enacted(\gamma) = \begin{cases}
@@ -44,7 +44,7 @@ Where $W_e$ is the happine gained by having the issue enacted, and $W_p$ is the 
 
 ### Coalitions
 
-Now, if you want to enact policies you need to make people care for your issue. One way to do that is to form coalitions. Say, you will colude with someone if that increases your utility. To do that you must increase popular support for issues you like or even manage to enact them.
+Now, if you want to enact policies you need to make people care for your issue. One way to do that is to form coalitions. Say, you will colude with someone if that increases your utility. To do that you must increase popular support for issues you like.
 
 Lets define a coalition as a set of people $C$ such that 
 
@@ -54,11 +54,36 @@ $p_1 \cdot p_2 > \kappa_{coal}\qquad \forall\  p_1,\ p_2 \in C$
 
 You can engange in a talk with another person. Thus, changing your stance on issues so that the talk is a pareto improvement for those involved, making it viable.
 
-Suppose both people have a fixed plasticity $k_{plasticity}$ budget to spend on modifying your beliefs. It should be easier to modify a belief closer to 0.
+Suppose both people have a fixed plasticity $k_{plasticity}$ budget to spend on modifying your beliefs. It should be easier to modify a belief closer to 0. [^cost-details]
 
-You can talk to $n$ people per month, and your plasticity is fixed for the month. <small> Interesting to see what happens if we vary n radically, say from 2,3 to 10, to 1000. Also what about plasticity (a younger - more plastic - vs old population)</small>
+When you talk, you 
 
-##### Sim 1
+You can talk to $n$ people per day, and your plasticity is fixed for the day. <small> (Interesting to see what happens if we vary n radically, say {2, 3, 10, 1000}. Also what about plasticity (a younger - more plastic - vs old population))</small>
+
+
+
+<details><summary><b>Simulation 1</b></summary>
+
+## Simulation 1
+
+### Params
+
+* Population Size
+* Number of Issues
+* Number of Days
+* Constant plasticity budget
+* Constant talk budget
+
+
+### Initial state:
+Randomize a population. Randomize each person's radicalism (total issue 'budget'). [Sample issues](https://mathoverflow.net/questions/24688/efficiently-sampling-points-uniformly-from-the-surface-of-an-n-sphere) to obtain such budget.
+
+### Steps:
+
+#### Day Starts
+* Each person talks with another person. They need 
+
+
 
 
 
@@ -81,4 +106,7 @@ How to normalize this? Maybe we should have an issue weight as well. You can agr
 </details>
 
 
-[Hypothesis1]: this
+
+[^cost-details]: Lets say that the cost for moving from $x$ to $x+\delta$ is $x\cdot\delta$ (so it is more costly, the higher the x). Therefore, the cost for moving from $a$ to $a+d$ is $\int_{a}^{a+d}x\ dx = d(2a+d)$.
+
+[^hypothesis-1]: this is good.
